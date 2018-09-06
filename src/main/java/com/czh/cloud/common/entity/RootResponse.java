@@ -17,6 +17,11 @@ public class RootResponse<T> {
         this.message = rootResultCode.message();
     }
 
+    public void setRootResponse(RootException rootException){
+        this.code = rootException.getCode();
+        this.message = rootException.getMsg();
+    }
+
     private String code;
 
     private String message;
@@ -49,6 +54,10 @@ public class RootResponse<T> {
 
     public static RootResponse instance(){
         return new RootResponse(RootResultCode.SUCCESS);
+    }
+
+    public static RootResponse instance(RootResultCode rootResultCode){
+        return new RootResponse(rootResultCode);
     }
 
     public String toString() {
