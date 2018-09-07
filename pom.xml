@@ -10,7 +10,7 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.czh.cloud</groupId>
+    <groupId>com.czh.cloud.common</groupId>
     <artifactId>cloud-common</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
