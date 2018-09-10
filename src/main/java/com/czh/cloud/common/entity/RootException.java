@@ -51,4 +51,8 @@ public class RootException extends RuntimeException {
     public void setMsg(String msg) {
         this.msg = msg;
     }
+
+    public String toString() {
+        return "{code=" + this.code + ", message=" + this.msg + "}";
+    }
 }

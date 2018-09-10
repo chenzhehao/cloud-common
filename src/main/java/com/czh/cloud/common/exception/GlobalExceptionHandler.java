@@ -27,12 +27,13 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(Exception.class)
     public RootResponse myException(final HttpServletRequest request, final HttpServletResponse response,
                                     final Exception ex) {
-        logger.error("请求异常：", ex);
         RootResponse resp = RootResponse.instance(RootResultCode.SYSTEM_INNER_BUSY);
         if (ex instanceof RootException) {
             RootException e = (RootException) ex;
             resp.setRootResponse(e);
+            logger.error(e.toString());
         }
+        logger.error("请求异常：", ex);
         return resp;
     }
 }
